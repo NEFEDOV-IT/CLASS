@@ -6,8 +6,9 @@ const options = {
 class Storage {
     constructor(key, options) {
         this.key = key
-        this.value = options.value
+        this.value = options.defaultValue
         this.storage = (options.storageType === 'local') ? localStorage : sessionStorage
+        console.log(this.storage)
     }
 
     get() {
