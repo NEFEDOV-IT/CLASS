@@ -8,7 +8,6 @@ class Storage {
         this.key = key
         this.value = options.defaultValue
         this.storage = (options.storageType === 'local') ? localStorage : sessionStorage
-        console.log(this.storage)
     }
 
     get() {
@@ -31,7 +30,7 @@ class Storage {
 }
 
 const admin = new Storage('admin', options)
-admin.set('Ilya')
+// admin.set('Ilya')
 // admin.clear()
 console.log(admin.get())
 console.log(admin)
