@@ -1,13 +1,13 @@
 const options = {
-    nameStorage: 'local',
-    value: null,
+    storageType: 'local',
+    defaultValue: null,
 }
 
 class Storage {
     constructor(key, options) {
         this.key = key
         this.value = options.value
-        this.storage = (options.nameStorage === 'local') ? localStorage : sessionStorage
+        this.storage = (options.storageType === 'local') ? localStorage : sessionStorage
     }
 
     get() {
@@ -21,7 +21,7 @@ class Storage {
 
     clear() {
         this.storage.removeItem(this.key)
-        this.value = options.value
+        this.value = options.defaultValue
     }
 
     isEmpty() {
